@@ -460,14 +460,7 @@
                     </to>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.0.2155</version> <!-- Use the latest version -->
-            </plugin>    
-
-        </plugins>
+    </plugins>
     </build>
 
     <profiles>
@@ -549,12 +542,7 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
-
-                 <properties>
-  <sonar.login>squ_20d8a1c1b587d7f3b6a747d43113e9fb5b3c5c4a</sonar.login>
-</properties>
-
-        </profile>
+    </profile>
    </profiles>
 
     <repositories>
