@@ -376,6 +376,15 @@
                 </configuration>
             </plugin>
 
+                 
+    <plugins>
+        <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>9.9.8.100196</version> <!-- Use the latest version -->
+        </plugin>
+    </plugins>
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
