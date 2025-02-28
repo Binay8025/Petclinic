@@ -549,6 +549,11 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
+
+                 <properties>
+  <sonar.login>squ_20d8a1c1b587d7f3b6a747d43113e9fb5b3c5c4a</sonar.login>
+</properties>
+
         </profile>
    </profiles>
 
