@@ -464,7 +464,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>9.9.8.100196</version> <!-- Use the latest version -->
+                <version>3.9.0.2155</version> <!-- Use the latest version -->
             </plugin>    
 
         </plugins>
