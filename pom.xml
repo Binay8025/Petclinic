@@ -85,7 +85,7 @@
    <distributionManagement>
     <repository>
         <id>nexus</id>
-        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/repository/Pentaclinc/</url>
+        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#browse/browse:maven-releases</url>
     </repository>
     <snapshotRepository>
         <id>nexus</id>
@@ -565,7 +565,7 @@
       <repository>
         <id>maven-releases</id>
         <name>maven-releases</name>
-        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/repository/Pentaclinc/</url>
+        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#browse/browse:maven-releases</url>
    </repository> 
              
     </repositories>
