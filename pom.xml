@@ -84,12 +84,12 @@
 
    <distributionManagement>
     <repository>
-        <id>nexus</id>
-        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#browse/browse:maven-releases</url>
+        <id>maven-releases</id>
+        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#admin/repository/repositories:maven-releases</url>
     </repository>
     <snapshotRepository>
-        <id>nexus</id>
-        <url>http://nexus.local:8081/repository/maven-snapshots</url>
+        <id>maven-snapshots</id>
+        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#admin/repository/repositories:maven-releases</url>
     </snapshotRepository>
 </distributionManagement>
          
@@ -565,7 +565,7 @@
       <repository>
         <id>maven-releases</id>
         <name>maven-releases</name>
-        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#browse/browse:maven-releases</url>
+        <url>https://crispy-space-bassoon-4jg4vxqgpqq935w7v-8081.app.github.dev/#admin/repository/repositories:maven-releases</url>
    </repository> 
              
     </repositories>
