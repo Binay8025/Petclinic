@@ -12,56 +12,73 @@ pipeline {
     
     stages{
         
-        stage("Git Checkout"){
-            steps{
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jaiswaladi246/Petclinic.git'
+        stages {
+        stage('Git checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Binay8025/Petclinic.git'
             }
         }
         
         stage("Compile"){
             steps{
-                sh "mvn clean compile"
+                bat "mvn clean compile"
             }
         }
         
          stage("Test Cases"){
             steps{
-                sh "mvn test"
+                bat "mvn test"
             }
         }
         
-        stage("Sonarqube Analysis "){
-            steps{
-                withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Petclinic \
-                    -Dsonar.java.binaries=. \
-                    -Dsonar.projectKey=Petclinic '''
-    
-                }
-            }
+         stage('Sonar Analysis') {
+            steps {
+                script {
+                    withSonarQubeEnv('sonar-scanner') {
+                         bat """
+                              $SCANNER_HOME/bin/sonar-scanner \
+                              -Dsonar.url=https://urban-carnival-g459rgx5v465hww6r-9000.app.github.dev/ \
+                              -Dsonar.login=squ_45f5034aecbb7df10cea10d2f66f523aec2984a7 \
+                              -Dsonar.projectName=Petclinic \
+                              -Dsonar.sources=src \
+                              -Dsonar.java.binaries=target/classes \
+                              -Dsonar.projectKey=Petclinic
+                           
+                           """
+                  }
+                } 
+             } 
         }
         
-        stage("OWASP Dependency Check"){
-            steps{
-                dependencyCheck additionalArguments: '--scan ./ --format HTML ', odcInstallation: 'DP'
+        stage('OWASP Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan target/', odcInstallation: 'owasp'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
         
          stage("Build"){
             steps{
-                sh " mvn clean install"
+                bat " mvn clean install"
             }
         }
+
+            stage('Nexus deploy') {
+            steps {
+                 configFileProvider([configFile(fileId: '48daf68d-1992-46dc-9ea8-0299547bf066', variable: 'nexussetting')]) {
+                 bat """mvn -s "${nexussetting}" clean deploy -DskipTests=true -Pwar"""
+         }
+    }
+}
         
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: '58be877c-9294-410e-98ee-6a959d73b352', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'my-docker-registry-creds', toolName: 'docker') {
                         
-                        sh "docker build -t image1 ."
-                        sh "docker tag image1 adijaiswal/pet-clinic123:latest "
-                        sh "docker push adijaiswal/pet-clinic123:latest "
+                        bat "docker build -t image1 ."
+                        bat "docker tag image1 binay8025/binayp:pet-clinic123:latest "
+                        bat "docker push binay8025/binayp:pet-clinic123:latest "
                     }
                 }
             }
@@ -69,7 +86,7 @@ pipeline {
         
         stage("TRIVY"){
             steps{
-                sh " trivy image adijaiswal/pet-clinic123:latest"
+                bat " trivy image binay8025/binayp:pet-clinic123:latest"
             }
         }
         
