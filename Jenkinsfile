@@ -90,10 +90,13 @@ pipeline {
             }
         }
         
-        stage("Deploy To Tomcat"){
-            steps{
-                sh "cp  /var/lib/jenkins/workspace/CI-CD/target/petclinic.war /opt/apache-tomcat-9.0.65/webapps/ "
-            }
-        }
+         stage('Deploy To Docker Container') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'my-docker-registry-creds', toolName: 'docker') {
+                        sh "docker run -d --name petclinic123 -p 8070:8070 binay8025/binayp:pet-clinic123:latest"
+                  }
+              }
+         }
     }
 }
