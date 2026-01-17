@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# Build output
+target
+*.jar
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Secrets
+.env
+*.pem
+*.key
