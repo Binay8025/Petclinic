@@ -17,4 +17,6 @@ COPY --from=build /app/target/petclinic.jar app.jar
 
 EXPOSE 8070
 
+USER appuser
+
 ENTRYPOINT ["java","-XX:MaxRAMPercentage=75","-jar","app.jar"]
