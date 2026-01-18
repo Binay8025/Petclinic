@@ -9,7 +9,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
-COPY --from=build /app/target/petclinic.jar
+COPY --from=build /app/target/petclinic.jar petclinic.jar
 
 EXPOSE 8070
 
