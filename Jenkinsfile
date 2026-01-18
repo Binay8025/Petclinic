@@ -87,7 +87,7 @@ pipeline {
         """
     }
 }
-          stage('Build & Tag Docker image') {
+          stage('Build Docker image') {
                steps {
                    script {
                         withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
@@ -129,7 +129,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
-                        sh "docker run -d --name petclinic123 -p 8070:8070 binay8025/binayp:pet-clinic123:latest"
+                        sh "docker run -d --name petclinic123 -p 8070:8080 binay8025/binayp:pet-clinic123:latest"
                   }
               }
          }
