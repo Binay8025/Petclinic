@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # -------- Runtime Stage --------
-FROM eclipse-temurin:17-jre-alpine
+FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
@@ -18,4 +18,4 @@ COPY --from=build /app/target/petclinic.jar petclinic.jar
 
 EXPOSE 8070
 
-ENTRYPOINT ["java","-jar","petclinic.jar"]
+ENTRYPOINT ["java","-jar","/petclinic.jar"]
