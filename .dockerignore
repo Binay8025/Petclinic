@@ -2,10 +2,6 @@
 .git
 .gitignore
 
-# Build output
-target
-*.jar
-
 # IDE
 .idea
 .vscode
