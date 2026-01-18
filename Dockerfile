@@ -18,4 +18,3 @@ COPY --from=build /app/target/petclinic.jar petclinic.jar
 
 EXPOSE 8070
 
-CMD java -jar /petclinic.jar
