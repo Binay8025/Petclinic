@@ -9,14 +9,35 @@
 
 # OS
 .DS_Store
+Thumbs.db
+
+# Build output (CRITICAL)
+# -------------------
+target/
+*.jar
+
 
 # Logs
 *.log
 
 # Secrets
 .env
+.env.*
 *.pem
 *.key
+*.crt
 
-Dockerfile
+# -------------------
+# Docs & configs
+# -------------------
 README.md
+Dockerfile
+docker-compose.yml
+
+# -------------------
+# Test & CI artifacts
+# -------------------
+coverage/
+*.tmp
+
+
