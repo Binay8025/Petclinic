@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Binay8025/Ekart.git'
+                    url: 'https://github.com/Binay8025/Petclinic.git'
             }
         }
         
