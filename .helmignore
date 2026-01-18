@@ -1,0 +1,64 @@
+# -------------------
+# VCS
+# -------------------
+.git
+.gitignore
+
+# -------------------
+# Helm dependencies cache
+# -------------------
+charts/
+Chart.lock
+
+# -------------------
+# IDE / Editor
+# -------------------
+.idea/
+.vscode/
+*.iml
+
+# -------------------
+# OS files
+# -------------------
+.DS_Store
+Thumbs.db
+
+# -------------------
+# Build & runtime artifacts
+# -------------------
+target/
+*.jar
+*.log
+
+# -------------------
+# Secrets (CRITICAL)
+# -------------------
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.pfx
+
+# -------------------
+# Docker / CI
+# -------------------
+Dockerfile
+docker-compose.yml
+.dockerignore
+Jenkinsfile
+.gitlab-ci.yml
+.github/
+
+# -------------------
+# Tests & coverage
+# -------------------
+coverage/
+*.tmp
+*.bak
+
+# -------------------
+# Docs
+# -------------------
+README.md
+docs/
