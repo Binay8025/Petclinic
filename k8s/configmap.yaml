@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: petclinic
+  namespace: dev
+data:
+  APP_ENV: "test"
+  APP_PORT: "8070"
+  DB_HOST: "mysql.dev.svc.cluster.local"
+  DB_NAME: "shoppingdb"
+
+  # --- Spring Boot proxy / ingress fixes ---
+  server.use-forward-headers: "true"
+  server.tomcat.remote-ip-header: "x-forwarded-for"
+  server.tomcat.protocol-header: "x-forwarded-proto"
+  server.session.cookie.path: "/"
+  server.session.cookie.http-only: "true"
