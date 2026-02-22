@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: shopping-cart
+      app: petclinic-cart
   namespaceSelector:
     matchNames:
     - test
