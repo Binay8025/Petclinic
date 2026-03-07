@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: petclinic
-        image: binay8025/binayp:dev
+        image: petclinic:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8070
