@@ -1,4 +1,4 @@
 ipiVersion: v1
 kind: Namespace
 metadata:
-  name: test
+  name: dev
