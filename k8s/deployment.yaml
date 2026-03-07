@@ -23,7 +23,7 @@ spec:
         image: binay8025/petclinic:Petclinic
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8070
+        - containerPort: 8080
 
         envFrom:
         - configMapRef:
