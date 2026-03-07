@@ -4,11 +4,11 @@ metadata:
   name: petclinic-svc
   namespace: dev
   labels:
-    app: petclinic-cart
+    app: petclinic-pet
 spec:
   type: ClusterIP
   selector:
-    app: petclinic-cart
+    app: petclinic-pet
   ports:
   - name : metrics
     port: 80
